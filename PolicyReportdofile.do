@@ -116,3 +116,25 @@ graph bar foods, over(highera) over(racwht)
 
 
 save "H:\onis\Downloads\PUBPOL527\REFORMATTEDPOLICYREPORTACS 2019 weighted subsample.dta", replace
+
+***** ----------------------------- Kailey's Code ---------------------------------- ****
+
+*** summary statistics ---- bar graphs showing percentage of washington adults using social services
+*** the yline intercept is the national average
+
+
+graph bar if wa==1, over(foods) ///
+title("What percent of Washington adults use foodstamps?" ///
+, span size(medium)) ///
+ytitle("Percent of Household Responses") ///
+blabel(bar, format(%4.1f)) ///
+intensity(25) ///
+yline(13)
+
+graph bar if wa==1, over(hinscaid) ///
+title("What percent of Washington adults use Medicaid?" ///
+, span size(medium)) ///
+ytitle("Percent of Household Responses") ///
+blabel(bar, format(%4.1f)) ///
+intensity(25) ///
+yline(20)
